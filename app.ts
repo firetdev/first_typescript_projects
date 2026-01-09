@@ -1,4 +1,4 @@
-// From NodeJS docs
+// From Node.js docs
 
 type User = {
   name: string;
