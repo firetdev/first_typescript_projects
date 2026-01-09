@@ -1,5 +1,3 @@
-// From Node.js docs
-
 type User = {
   name: string;
   age: number;
