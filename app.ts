@@ -8,7 +8,7 @@ function isAdult(user: User): boolean {
 }
 
 const justine = {
-  name: 'Justine',
+  name: 'Justine (from Blur)',
   age: 23,
 } satisfies User;
 
