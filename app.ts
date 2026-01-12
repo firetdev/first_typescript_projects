@@ -1,6 +1,6 @@
 type User = {
   name: string;
-  age: number;
+  age: number;  // ?
 };
 
 function isAdult(user: User): boolean {
