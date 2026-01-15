@@ -1,6 +1,6 @@
 type User = {
   name: string;
-  age: number;  // ?
+  age: number;
 };
 
 function isAdult(user: User): boolean {
@@ -8,7 +8,7 @@ function isAdult(user: User): boolean {
 }
 
 const justine = {
-  name: 'Justine (from Blur)',
+  name: 'Justine',
   age: 23,
 } satisfies User;
 
