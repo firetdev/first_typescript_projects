@@ -1,8 +1,7 @@
 import readline from 'node:readline/promises';
 import { stdin as input, stdout as output } from 'node:process';
-import type { Note } from '../shared/types.js';
-import { getNotes } from './getNotes.ts';
-import { createNote } from './createNote.ts';
+import { getNotes } from './getNotes.js';
+import { createNote } from './createNote.js';
 
 console.log('Welcome to notes CLI');
 

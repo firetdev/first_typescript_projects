@@ -1,43 +1,19 @@
 {
-  // Visit https://aka.ms/tsconfig to read more about this file
   "compilerOptions": {
-    // File Layout
-    // "rootDir": "./src",
-    // "outDir": "./dist",
-
-    // Environment Settings
-    // See also https://aka.ms/tsconfig/module
-    "module": "nodenext",
-    "target": "esnext",
-    // For nodejs:
-    "lib": ["esnext"],
-    "types": ["node"],
-    // and npm install -D @types/node
-
-    // Other Outputs
-    "sourceMap": true,
-    "declaration": true,
-    "declarationMap": true,
-
-    // Stricter Typechecking Options
-    "noUncheckedIndexedAccess": true,
-    "exactOptionalPropertyTypes": true,
-
-    // Style Options
-    // "noImplicitReturns": true,
-    // "noImplicitOverride": true,
-    // "noUnusedLocals": true,
-    // "noUnusedParameters": true,
-    // "noFallthroughCasesInSwitch": true,
-    // "noPropertyAccessFromIndexSignature": true,
-
-    // Recommended Options
-    "strict": true,
-    "jsx": "react-jsx",
-    "verbatimModuleSyntax": true,
-    "isolatedModules": true,
-    "noUncheckedSideEffectImports": true,
-    "moduleDetection": "force",
-    "skipLibCheck": true,
-  }
+    "target": "ES2022",             // modern JS features
+    "module": "nodenext",           // ESM for Node 18+
+    "moduleResolution": "nodenext", // correct module resolution for ESM
+    "outDir": "dist",               // compiled JS goes here
+    "rootDir": ".",                 // root folder for TS sources
+    "strict": true,                 // strong type checks
+    "esModuleInterop": true,        // optional for easier imports
+    "forceConsistentCasingInFileNames": true,
+    "verbatimModuleSyntax": true    // preserve import paths exactly
+  },
+  "include": [
+    "**/*.ts"                       // compile all TS files
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }

@@ -58,9 +58,9 @@ http.createServer(async (req: IncomingMessage, res: ServerResponse) => {
 
       // Create the note
       const newNote: Note = {
-        name,
-        textContent,
-        createdAt: Date.now(),
+        name: noteName,
+        content: textContent,
+        createdAt: Date.now()
       };
 
       notes.push(newNote);
