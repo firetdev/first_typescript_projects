@@ -1,6 +1,6 @@
 import http, { IncomingMessage, ServerResponse } from 'node:http';
 import fs from 'node:fs/promises';
-import { Note } from '../shared/types.js';
+import type { Note } from '../shared/types.js';
 
 const NOTES_FILE = 'notes.json';
 
@@ -58,7 +58,7 @@ http.createServer(async (req: IncomingMessage, res: ServerResponse) => {
 
       // Create the note
       const newNote: Note = {
-        noteName,
+        name,
         textContent,
         createdAt: Date.now(),
       };
