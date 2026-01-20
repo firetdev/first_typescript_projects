@@ -1,6 +1,8 @@
 import readline from 'node:readline/promises';
 import { stdin as input, stdout as output } from 'node:process';
 import type { Note } from '../shared/types.js';
+import { getNotes } from './getNotes.ts';
+import { createNote } from './createNote.ts';
 
 console.log('Welcome to notes CLI');
 
@@ -11,9 +13,17 @@ async function init(): Promise<void> {
   let command = await rl.question('Enter "get" to get notes or "create" to create a note. ');
 
   if (command == 'get') {
-
+    const notes = await getNotes();
+    console.log('Notes:', notes);
   } else if (command == 'create') {
+    let noteName = await rl.question('What is the note\'s name? ');
+    let content = await rl.question('What is the note\'s content? ');
 
+    let res = await createNote(noteName, content);
+    if (res.success == true)
+      console.log('Successfully created note!');
+    else
+      console.log(res.message);
   } else {
     console.log('Error: invalid command');
   }
