@@ -5,7 +5,7 @@ import { createNote } from './createNote.js';
 
 console.log('Welcome to notes CLI');
 
-// Create readline interface
+// Create rl interface
 const rl = readline.createInterface({ input, output });
 
 async function init(): Promise<void> {
