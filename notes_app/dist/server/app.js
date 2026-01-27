@@ -13,6 +13,13 @@ const readRequestBody = (req) => {
 };
 http.createServer(async (req, res) => {
     try {
+        // Reset notes
+        if (req.method === 'POST' && req.url === '/api/resetNotes') {
+            await fs.unlink(NOTES_FILE);
+            console.log('Reset notes');
+            res.writeHead(200, { 'Content-Type': 'application/json' });
+            return res.end();
+        }
         // Get note
         if (req.method === 'POST' && req.url === '/api/getNotes') {
             const fileContents = await fs.readFile(NOTES_FILE, 'utf-8');

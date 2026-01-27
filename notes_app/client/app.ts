@@ -2,6 +2,7 @@ import readline from 'node:readline/promises';
 import { stdin as input, stdout as output } from 'node:process';
 import { getNotes } from './getNotes.js';
 import { createNote } from './createNote.js';
+import { resetNotes } from './resetNotes.js';
 
 console.log('Welcome to notes CLI');
 
@@ -9,9 +10,12 @@ console.log('Welcome to notes CLI');
 const rl = readline.createInterface({ input, output });
 
 async function init(): Promise<void> {
-  let command = await rl.question('Enter "get" to get notes or "create" to create a note. ');
+  let command = await rl.question('Enter "get" to get notes or "create" to create a note.  Enter "reset" to delete all notes. ');
 
-  if (command == 'get') {
+  if (command == 'reset') {
+    await resetNotes();
+    console.log('Notes reset! ');
+  } else if (command == 'get') {
     const notes = await getNotes();
     console.log('Notes:', notes);
   } else if (command == 'create') {
