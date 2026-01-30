@@ -89,7 +89,14 @@ http.createServer(async (req: IncomingMessage, res: ServerResponse) => {
 
     // Get note
     if (req.method === 'POST' && req.url === '/api/getNotes') {
-      const fileContents = await fs.readFile(NOTES_FILE, 'utf-8');
+      let fileContents: string;
+      try {
+        fileContents = await fs.readFile(NOTES_FILE, 'utf-8');
+      } catch {
+        // If the file doesn't exist
+        res.writeHead(404, { 'Content-Type': 'application/json' });
+        return res.end(JSON.stringify({ error: 'No notes found' }));
+      }
 
       res.writeHead(200, { 'Content-Type': 'application/json' });
       return res.end(fileContents);

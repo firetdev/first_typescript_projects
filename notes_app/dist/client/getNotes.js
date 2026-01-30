@@ -7,7 +7,7 @@ export async function getNotes() {
         },
     });
     if (!response.ok) {
-        throw new Error(`Failed to get notes (${response.status})`);
+        console.log('Error getting notes');
     }
     const data = (await response.json());
     return data;

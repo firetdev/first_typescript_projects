@@ -11,7 +11,7 @@ export async function getNotes(): Promise<Note[]> {
   });
 
   if (!response.ok) {
-    throw new Error(`Failed to get notes (${response.status})`);
+    console.log('Error getting notes');
   }
 
   const data = (await response.json()) as Note[];
