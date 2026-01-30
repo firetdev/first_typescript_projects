@@ -1,6 +1,6 @@
 import { Counter } from './counter'
 
-const counter: Counter = new Counter();
+const counter = new Counter();
 
 counter.increment();
 counter.increment();
