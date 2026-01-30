@@ -4,6 +4,7 @@ import type { Note } from '../shared/types.js';
 
 const NOTES_FILE = 'notes.json';
 
+// Pretty self-explanatory
 const readRequestBody = (req: IncomingMessage): Promise<string> => {
   return new Promise((resolve, reject) => {
     let body = '';
