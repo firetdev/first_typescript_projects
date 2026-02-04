@@ -7,7 +7,7 @@ import { deleteNote } from './deleteNote.js';
 
 console.log('Welcome to notes CLI');
 
-// Create rl interface
+// Create readline interface
 const rl = readline.createInterface({ input, output });
 
 async function init(): Promise<void> {
